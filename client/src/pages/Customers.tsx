@@ -21,7 +21,7 @@ const [customers, setCustomers] = useState<Customer[]>([]);
 
 const fetchCustomers = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/customers");
+    const res = await axios.get("https://mini-erp-crm-rf8if.onrender.com/customers");
     setCustomers(res.data);
   } catch (err) {
     console.log(err);
