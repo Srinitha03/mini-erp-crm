@@ -8,8 +8,8 @@ function Products() {
   sku: string;
   product_name: string;
   category: string;
-  price: string;
-  stock: string;
+  price: number | string;
+  stock: number | string;
   status: string;
 };
 
@@ -21,7 +21,7 @@ function Products() {
 
   const [form, setForm] = useState({
     sku: "",
-    name: "",
+    product_name: "",
     category: "",
     price: "",
     stock: "",
@@ -139,7 +139,14 @@ const fetchProducts = async () => {
 
   <button
   onClick={() => {
-    setForm(product);
+    setForm({
+  sku: product.sku,
+  product_name: product.product_name,
+  category: product.category,
+  price: String(product.price),
+  stock:String( product.stock),
+  status: product.status,
+});
     setEditingId(product.id);
     setShowForm(true);
   }}
@@ -186,7 +193,7 @@ const fetchProducts = async () => {
 type="text"
 placeholder="SKU Code"
 value={form.sku}
-onChange={(e)=>setForm({...form,name:e.target.value})}
+onChange={(e)=>setForm({...form,sku:e.target.value})}
 className="w-full border p-3 rounded-lg mb-4"
 />
 
