@@ -21,7 +21,8 @@ const [customers, setCustomers] = useState<Customer[]>([]);
 
 const fetchCustomers = async () => {
   try {
-    const res = await axios.get("https://mini-erp-crm-rf8if.onrender.com/customers");
+    const res = // Fetch customers ✅
+await axios.get("https://mini-erp-crm-rf8if.onrender.com/customers");
     setCustomers(res.data);
   } catch (err) {
     console.log(err);
@@ -67,12 +68,15 @@ const fetchCustomers = async () => {
   const saveCustomer = async () => {
   try {
     if (editingId === null) {
-      await axios.post("http://localhost:5000/customers", form);
+      await axios.post(
+  "https://mini-erp-crm-rf8if.onrender.com/customers",
+  form
+);
     } else {
       await axios.put(
-        `http://localhost:5000/customers/${editingId}`,
-        form
-      );
+  `https://mini-erp-crm-rf8if.onrender.com/customers/${editingId}`,
+  form
+);
     }
 
     fetchCustomers();
@@ -94,7 +98,9 @@ const fetchCustomers = async () => {
 };
   const deleteCustomer = async (id: number) => {
   try {
-    await axios.delete(`http://localhost:5000/customers/${id}`);
+    await axios.delete(
+  `https://mini-erp-crm-rf8if.onrender.com/customers/${id}`
+);
     fetchCustomers();
   } catch (err) {
     console.log(err);
