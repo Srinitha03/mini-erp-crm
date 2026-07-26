@@ -1,87 +1,44 @@
 const db = require("../config/db");
 
-// Get all customers
-exports.getCustomers = (req, res) => {
-  db.query("SELECT * FROM customers", (err, result) => {
+// Get Settings
+exports.getSettings = (req, res) => {
+  db.query("SELECT * FROM settings LIMIT 1", (err, result) => {
     if (err) {
       return res.status(500).json(err);
     }
-    res.json(result);
+
+    res.json(result[0]);
   });
 };
 
-// Add customer
-exports.addCustomer = (req, res) => {
-  const { name, business, phone, email, type, status } = req.body;
-
-  const sql = `
-    INSERT INTO customers
-    (name, business, phone, email, type, status)
-    VALUES (?, ?, ?, ?, ?, ?)
-  `;
-
-  db.query(
-    sql,
-    [name, business, phone, email, type, status],
-    (err, result) => {
-      if (err) {
-        return res.status(500).json(err);
-      }
-
-      res.json({
-        message: "Customer Added Successfully",
-        id: result.insertId,
-      });
-    }
-  );
-};
-
-// Update customer
-exports.updateCustomer = (req, res) => {
-  const { id } = req.params;
-  const { name, business, phone, email, type, status } = req.body;
-
-  const sql = `
-    UPDATE customers
-    SET
-      name=?,
-      business=?,
-      phone=?,
-      email=?,
-      type=?,
-      status=?
-    WHERE id=?
-  `;
+// Update Settings
+exports.updateSettings = (req, res) => {
+  const {
+    name,
+    email,
+    phone,
+    company,
+    newPassword,
+  } = req.body;
 
   db.query(
-    sql,
-    [name, business, phone, email, type, status, id],
+    `UPDATE settings
+     SET name=?, email=?, phone=?, company=?, password=?
+     WHERE id=1`,
+    [
+      name,
+      email,
+      phone,
+      company,
+      newPassword || "admin123",
+    ],
     (err) => {
       if (err) {
         return res.status(500).json(err);
       }
 
       res.json({
-        message: "Customer Updated Successfully",
-      });
-    }
-  );
-};
-
-// Delete customer
-exports.deleteCustomer = (req, res) => {
-  const { id } = req.params;
-
-  db.query(
-    "DELETE FROM customers WHERE id=?",
-    [id],
-    (err) => {
-      if (err) {
-        return res.status(500).json(err);
-      }
-
-      res.json({
-        message: "Customer Deleted Successfully",
+        message: "Settings Updated Successfully",
       });
     }
   );
