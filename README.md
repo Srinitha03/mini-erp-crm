@@ -1,31 +1,40 @@
 # Mini ERP & CRM Operations Portal
 
-A complete Full Stack ERP & CRM web application developed using React, Node.js, Express.js, MySQL, Railway, Render, and Vercel. This project provides an easy-to-use business management system for handling customers, products, inventory, sales, reports, users, and settings.
+A complete Full Stack ERP & CRM web application developed using **React.js, Node.js, Express.js, MySQL, Railway, Render, and Vercel**. This project provides a centralized business management system for handling customers, products, inventory, sales, reports, users, and settings through an intuitive and responsive dashboard.
 
 ---
 
 # Project Overview
 
-The Mini ERP & CRM Operations Portal is designed to simplify business operations by providing a centralized dashboard where administrators can manage customers, inventory, products, sales, reports, users, and application settings. The project follows a modern full-stack architecture with a React frontend, Express backend, and MySQL database.
+The **Mini ERP & CRM Operations Portal** is designed to simplify business operations by providing a centralized dashboard where administrators can efficiently manage customers, inventory, products, sales, reports, users, and application settings.
+
+The application follows a modern full-stack architecture:
+
+- React.js Frontend
+- Node.js & Express.js Backend
+- Railway MySQL Database
+- REST API Communication using Axios
+- Frontend deployed on Vercel
+- Backend deployed on Render
 
 ---
 
 # Objectives
 
-- Manage customers efficiently.
-- Manage products and inventory.
-- Create and manage sales challans.
-- Generate reports.
-- Maintain user accounts.
-- Store business data securely.
-- Provide an attractive and responsive dashboard.
+- Manage customers efficiently
+- Manage products and inventory
+- Create and manage sales challans
+- Generate business reports
+- Maintain user accounts
+- Store business data securely
+- Provide an attractive and responsive dashboard
 
 ---
 
 # Features
 
 - Secure Login Page
-- Dashboard
+- Dashboard Overview
 - Customer Management
 - Product Management
 - Inventory Management
@@ -35,7 +44,7 @@ The Mini ERP & CRM Operations Portal is designed to simplify business operations
 - Settings Module
 - CRUD Operations
 - Responsive Design
-- MySQL Database Integration
+- Railway MySQL Integration
 - REST API Integration
 
 ---
@@ -48,8 +57,8 @@ The Mini ERP & CRM Operations Portal is designed to simplify business operations
 - TypeScript
 - Vite
 - Axios
-- React Router
-- CSS
+- React Router DOM
+- Tailwind CSS
 
 ## Backend
 
@@ -71,19 +80,19 @@ The Mini ERP & CRM Operations Portal is designed to simplify business operations
 # System Architecture
 
 ```
-                  User
-                    │
-                    ▼
-          React Frontend (Vercel)
-                    │
-          Axios REST API Requests
-                    │
-                    ▼
-        Node.js + Express Backend
-              (Render Server)
-                    │
-                    ▼
-          Railway MySQL Database
+                 User
+                   │
+                   ▼
+        React Frontend (Vercel)
+                   │
+          Axios REST API Calls
+                   │
+                   ▼
+      Node.js + Express Backend
+            (Render Server)
+                   │
+                   ▼
+        Railway MySQL Database
 ```
 
 ---
@@ -94,6 +103,8 @@ The Mini ERP & CRM Operations Portal is designed to simplify business operations
 
 - User Authentication
 - Role Selection
+- Remember Me
+- Password Visibility Toggle
 
 ## Dashboard
 
@@ -112,10 +123,10 @@ The Mini ERP & CRM Operations Portal is designed to simplify business operations
 
 ## Products
 
-- Add Products
-- Update Products
-- Delete Products
-- Search Products
+- Add Product
+- Update Product
+- Delete Product
+- Search Product
 
 ## Inventory
 
@@ -144,8 +155,8 @@ The Mini ERP & CRM Operations Portal is designed to simplify business operations
 
 ## Settings
 
-- Update Profile
 - Company Details
+- Update Profile
 - Change Password
 
 ---
@@ -161,15 +172,15 @@ MiniERP-CRM
 │   ├── assets
 │   ├── components
 │   ├── pages
-│   │     ├── Dashboard.tsx
-│   │     ├── Customers.tsx
-│   │     ├── Products.tsx
-│   │     ├── Inventory.tsx
-│   │     ├── SalesChallan.tsx
-│   │     ├── Reports.tsx
-│   │     ├── Users.tsx
-│   │     ├── Settings.tsx
-│   │     └── Login.tsx
+│   │   ├── Dashboard.tsx
+│   │   ├── Customers.tsx
+│   │   ├── Products.tsx
+│   │   ├── Inventory.tsx
+│   │   ├── SalesChallan.tsx
+│   │   ├── Reports.tsx
+│   │   ├── Users.tsx
+│   │   ├── Settings.tsx
+│   │   └── Login.tsx
 │   │
 │   ├── App.tsx
 │   ├── main.tsx
@@ -179,27 +190,27 @@ MiniERP-CRM
 │   ├── src
 │   │
 │   ├── config
-│   │      └── db.js
+│   │   └── db.js
 │   │
 │   ├── controllers
-│   │      ├── customerController.js
-│   │      ├── productController.js
-│   │      ├── inventoryController.js
-│   │      ├── salesController.js
-│   │      ├── reportController.js
-│   │      ├── dashboardController.js
-│   │      ├── userController.js
-│   │      └── settingController.js
+│   │   ├── customerController.js
+│   │   ├── productController.js
+│   │   ├── inventoryController.js
+│   │   ├── salesController.js
+│   │   ├── reportController.js
+│   │   ├── dashboardController.js
+│   │   ├── userController.js
+│   │   └── settingController.js
 │   │
 │   ├── routes
-│   │      ├── customerRoutes.js
-│   │      ├── productRoutes.js
-│   │      ├── inventoryRoutes.js
-│   │      ├── salesRoutes.js
-│   │      ├── reportRoutes.js
-│   │      ├── dashboardRoutes.js
-│   │      ├── userRoutes.js
-│   │      └── settingRoutes.js
+│   │   ├── customerRoutes.js
+│   │   ├── productRoutes.js
+│   │   ├── inventoryRoutes.js
+│   │   ├── salesRoutes.js
+│   │   ├── reportRoutes.js
+│   │   ├── dashboardRoutes.js
+│   │   ├── userRoutes.js
+│   │   └── settingRoutes.js
 │   │
 │   ├── server.js
 │   ├── package.json
@@ -212,11 +223,11 @@ MiniERP-CRM
 
 # Database
 
-Database Used:
+## Database Used
 
 - Railway MySQL
 
-Tables:
+## Tables
 
 - customers
 - products
@@ -227,107 +238,63 @@ Tables:
 
 ---
 
-# Output
+# REST API Endpoints
 
-### Login Page
+## GET
 
-- User Login
-- Remember Me
-- Role Selection
+```
+/customers
+/products
+/inventory
+/sales
+/reports
+/dashboard
+/users
+/settings
+```
 
-### Dashboard
+## POST
 
-- Business Overview
-- Total Customers
-- Products
-- Sales
-- Inventory
+```
+/customers
+/products
+/inventory
+/sales
+/users
+```
 
-### Customers
+## PUT
 
-- Customer Details
-- Add/Edit/Delete Customer
+```
+/customers/:id
+/products/:id
+/inventory/:id
+/sales/:id
+/users/:id
+/settings
+```
 
-### Products
+## DELETE
 
-- Product Details
-- Product CRUD
-
-### Inventory
-
-- Stock Information
-- Inventory Management
-
-### Sales
-
-- Sales Challan
-- Order Management
-
-### Reports
-
-- Business Reports
-- Sales Summary
-
-### Users
-
-- User Management
-
-### Settings
-
-- Company Settings
-- Password Update
-
----
-
-# APIs Used
-
-GET
-
-- /customers
-- /products
-- /inventory
-- /sales
-- /reports
-- /dashboard
-- /users
-- /settings
-
-POST
-
-- /customers
-- /products
-- /inventory
-- /sales
-- /users
-
-PUT
-
-- /customers/:id
-- /products/:id
-- /inventory/:id
-- /sales/:id
-- /users/:id
-- /settings
-
-DELETE
-
-- /customers/:id
-- /products/:id
-- /inventory/:id
-- /sales/:id
-- /users/:id
+```
+/customers/:id
+/products/:id
+/inventory/:id
+/sales/:id
+/users/:id
+```
 
 ---
 
 # Installation
 
-Clone Repository
+## Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_LINK
+git clone https://github.com/Srinitha03/mini-erp-crm.git
 ```
 
-Frontend
+## Frontend
 
 ```bash
 cd client
@@ -335,7 +302,7 @@ npm install
 npm run dev
 ```
 
-Backend
+## Backend
 
 ```bash
 cd server
@@ -347,9 +314,9 @@ npm run dev
 
 # Environment Variables
 
-Create a .env file inside server.
+Create a `.env` file inside the **server** folder.
 
-```
+```env
 DB_HOST=
 DB_USER=
 DB_PASSWORD=
@@ -364,7 +331,7 @@ PORT=5000
 
 - Visual Studio Code
 - Node.js
-- React
+- React.js
 - Express.js
 - MySQL
 - Railway
@@ -415,40 +382,40 @@ Include screenshots of:
 
 # Deployment
 
-Frontend
+## Frontend (Vercel)
 
-YOUR_VERCEL_LINK
+https://mini-erp-crm-git-main-srinitha03s-projects.vercel.app
 
-Backend
+## Backend (Render)
 
-YOUR_RENDER_LINK
+https://mini-erp-crm-rf8if.onrender.com
 
-Database
+## Database
 
 Railway MySQL
 
-GitHub Repository
+## GitHub Repository
 
-YOUR_GITHUB_LINK
+https://github.com/Srinitha03/mini-erp-crm
 
 ---
 
 # What We Implemented
 
-- Developed a complete ERP & CRM system using the MERN-related stack (React, Node.js, Express) with MySQL.
-- Implemented CRUD operations for all modules.
-- Connected frontend and backend using REST APIs.
-- Integrated Railway MySQL database.
-- Deployed frontend on Vercel.
-- Deployed backend on Render.
-- Created a responsive user interface.
-- Implemented business management modules including Customers, Products, Inventory, Sales, Reports, Users, and Settings.
+- Developed a complete ERP & CRM Operations Portal using React.js, Node.js, Express.js, and MySQL.
+- Implemented CRUD operations for Customers, Products, Inventory, Sales, Users, and Settings.
+- Connected the frontend and backend using REST APIs.
+- Integrated Railway MySQL Database.
+- Deployed the frontend using Vercel.
+- Deployed the backend using Render.
+- Built a responsive and modern user interface.
+- Implemented Dashboard analytics and business management modules.
 
 ---
 
 # Author
 
-** Maddenapelli  Srinitha**
+**Maddenapelli Srinitha**
 
 B.Tech – Artificial Intelligence & Machine Learning
 
@@ -458,4 +425,4 @@ Vignans Institute of Management and Technology for Women
 
 # License
 
-This project is developed for educational and internship purposes only.
+This project is developed for educational, internship, and learning purposes only.
