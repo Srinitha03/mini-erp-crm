@@ -12,6 +12,8 @@ function Login() {
     const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [role, setRole]= useState("Admin");
+  const [email, setEmail] = useState("test@gmail.com");
+const [password, setPassword] = useState("admin123");
   const handleLogin = () => {
     localStorage.setItem("role", role);
     navigate("/dashboard");
@@ -64,10 +66,11 @@ function Login() {
             <FaEnvelope className="absolute left-4 top-4 text-gray-400" />
 
             <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none shadow-sm"
-            />
+  type="email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none shadow-sm"
+/>
 
           </div>
 
@@ -77,12 +80,12 @@ function Login() {
 
             <FaLock className="absolute left-4 top-4 text-gray-400" />
 
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="Password"
-              className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none shadow-sm"
-            />
-
+           <input
+  type={showPassword ? "text" : "password"}
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none shadow-sm"
+/>
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
