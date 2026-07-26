@@ -11,7 +11,7 @@ function Users() {
 
 const fetchUsers = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/users");
+    const res = await axios.get("https://mini-erp-crm-r8if.onrender.com/users");
     setUsers(res.data);
   } catch (err) {
     console.log(err);
@@ -141,12 +141,12 @@ const [form, setForm] = useState({
     try {
   if (editingId !== null) {
     await axios.put(
-      `http://localhost:5000/users/${editingId}`,
+      `https://mini-erp-crm-r8if.onrender.com/users/${editingId}`,
       form
     );
   } else {
     await axios.post(
-      "http://localhost:5000/users",
+      "https://mini-erp-crm-r8if.onrender.com/users",
       form
     );
   }
@@ -275,7 +275,7 @@ const [form, setForm] = useState({
   if (window.confirm("Delete this user?")) {
     try {
       await axios.delete(
-        `http://localhost:5000/users/${user.id}`
+        `https://mini-erp-crm-r8if.onrender.com/users/${user.id}`
       );
 
       fetchUsers();

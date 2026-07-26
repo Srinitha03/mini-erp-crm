@@ -34,7 +34,7 @@ const [inventory, setInventory] = useState<InventoryItem[]>([]);
 
 const fetchInventory = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/inventory");
+    const res = await axios.get("https://mini-erp-crm-r8if.onrender.com/inventory");
     setInventory(res.data);
   } catch (err) {
     console.log(err);
@@ -253,14 +253,14 @@ className="w-full border p-3 rounded-lg mb-4"
     if (editingId === null) {
 
       await axios.post(
-        "http://localhost:5000/inventory",
+        "https://mini-erp-crm-r8if.onrender.com/inventory",
         form
       );
 
     } else {
 
       await axios.put(
-        `http://localhost:5000/inventory/${editingId}`,
+        `https://mini-erp-crm-r8if.onrender.com/inventory/${editingId}`,
         form
       );
 
@@ -323,7 +323,7 @@ className="w-full border p-3 rounded-lg mb-4"
   try {
 
     await axios.delete(
-      `http://localhost:5000/inventory/${deleteId}`
+      `https://mini-erp-crm-r8if.onrender.com/inventory/${deleteId}`
     );
 
     fetchInventory();

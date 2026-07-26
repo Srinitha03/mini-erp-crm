@@ -36,7 +36,7 @@ useEffect(() => {
 
 const fetchDashboard = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/dashboard");
+    const res = await axios.get("https://mini-erp-crm-r8if.onrender.com/dashboard");
     setDashboard({
   customers: Number(res.data.customers),
   products: Number(res.data.products),

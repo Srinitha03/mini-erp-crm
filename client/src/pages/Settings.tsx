@@ -25,7 +25,7 @@ useEffect(() => {
 
 const fetchSettings = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/settings");
+    const res = await axios.get("https://mini-erp-crm-r8if.onrender.com/settings");
 
     setProfile({
       ...profile,
@@ -226,7 +226,7 @@ const fetchSettings = async () => {
     }
 
     try {
-      await axios.put("http://localhost:5000/settings", {
+      await axios.put("https://mini-erp-crm-r8if.onrender.com/settings", {
   name: profile.name,
   email: profile.email,
   phone: profile.phone,

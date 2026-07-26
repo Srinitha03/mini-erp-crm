@@ -29,7 +29,7 @@ useEffect(() => {
 
 const fetchReports = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/reports");
+    const res = await axios.get("https://mini-erp-crm-r8if.onrender.com/reports");
     console.log("Reports API:", res.data);
     setReports(res.data);
   } catch (err) {

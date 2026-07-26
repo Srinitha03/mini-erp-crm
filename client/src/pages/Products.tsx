@@ -33,7 +33,7 @@ function Products() {
 
 const fetchProducts = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/products");
+    const res = await axios.get("https://mini-erp-crm-r8if.onrender.com/products");
     setProducts(res.data);
   } catch (err) {
     console.log(err);
@@ -158,7 +158,7 @@ const fetchProducts = async () => {
   onClick={async () => {
     try {
       await axios.delete(
-        `http://localhost:5000/products/${product.id}`
+        `https://mini-erp-crm-r8if.onrender.com/products/${product.id}`
       );
       fetchProducts();
     } catch (err) {
@@ -258,10 +258,10 @@ Cancel
 onClick={async () => {
   try {
     if (editingId === null) {
-      await axios.post("http://localhost:5000/products", form);
+      await axios.post("https://mini-erp-crm-r8if.onrender.com/products", form);
     } else {
       await axios.put(
-        `http://localhost:5000/products/${editingId}`,
+        `https://mini-erp-crm-r8if.onrender.com/products/${editingId}`,
         form
       );
     }
